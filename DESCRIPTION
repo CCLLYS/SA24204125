@@ -1,0 +1,17 @@
+Package: SA24204125
+Type: Package
+Title: The final test for 'Statistical Computing' course
+Version: 1.0
+Date: 2024-11-25
+Author: Yingsi Liang
+Maintainer: Yingsi Liang <1759878480@qq.com>
+Description: Several R and Rcpp function are includeds. 
+License: GPL (>= 2)
+Imports: Rcpp, microbenchmark, deSolve, pracma, ggplot2, boot, bootstrap, DAAG
+LinkingTo: Rcpp
+RoxygenNote: 7.3.2
+Encoding: UTF-8
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+URL: http://github.com/CCLLYS/SA24204125.git
+BugReports: http://github.com/CCLLYS/SA24204125/issues

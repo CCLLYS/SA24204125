@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Yingsi Liang" />
+
+<meta name="date" content="2024-12-05" />
+
+<title>The introduction of ‘Statistical Computing’ course final test</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">The introduction of ‘Statistical Computing’
+course final test</h1>
+<h4 class="author">Yingsi Liang</h4>
+<h4 class="date">2024-12-05</h4>
+
+
+
+<div id="introduction-to-functions" class="section level2">
+<h2>Introduction to functions</h2>
+<p>I have implemented the Romberg method for solving the initial value
+problem of ordinary differential equations and the Runge-kutta method
+for solving numerical integrals in R language and Cpp language
+respectively.</p>
+<div id="how-to-use-this-two-fuctons" class="section level3">
+<h3>How to use this two fuctons?</h3>
+<p>Runge-Kutta function is used to solve the initial value problem of
+ordinary differential equations. For example, we need to solve the
+ode:</p>
+<p><span class="math display">\[
+\frac{dy}{dx} = x-y+1 \\ y(0)=1
+\]</span></p>
+<p>The source R code for Runge-Kutta model is as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>RK4ODE <span class="ot">&lt;-</span> <span class="cf">function</span>(fun, a, b, n, y0){</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  h <span class="ot">&lt;-</span> (b<span class="sc">-</span>a)<span class="sc">/</span>n</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>  x[<span class="dv">1</span>] <span class="ot">&lt;-</span> a</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  y[<span class="dv">1</span>] <span class="ot">&lt;-</span> y0</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>  <span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    K1 <span class="ot">&lt;-</span> <span class="fu">fun</span>(x[k],y[k])</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    K2 <span class="ot">&lt;-</span> <span class="fu">fun</span>(x[k]<span class="sc">+</span>h<span class="sc">/</span><span class="dv">2</span>,y[k]<span class="sc">+</span>h<span class="sc">/</span><span class="dv">2</span><span class="sc">*</span>K1)</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    K3 <span class="ot">&lt;-</span> <span class="fu">fun</span>(x[k]<span class="sc">+</span>h<span class="sc">/</span><span class="dv">2</span>,y[k]<span class="sc">+</span>h<span class="sc">/</span><span class="dv">2</span><span class="sc">*</span>K2)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    K4 <span class="ot">&lt;-</span> <span class="fu">fun</span>(x[k]<span class="sc">+</span>h,y[k]<span class="sc">+</span>h<span class="sc">*</span>K3)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    y[k<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> y[k]<span class="sc">+</span>h<span class="sc">/</span><span class="dv">6</span><span class="sc">*</span>(K1<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>K2<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>K3<span class="sc">+</span>K4)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    x[k<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> x[k]<span class="sc">+</span>h</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>  }</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>x,<span class="at">y=</span>y)</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>}</span></code></pre></div>
+<p>The above R code involves one loop. The corresponding C++ code is as
+follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>DataFrame <span class="fu">RK4ODECpp</span>(Function fun, double a, double b, int n, double y0) {</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  NumericVector <span class="fu">x</span>(n <span class="sc">+</span> <span class="dv">1</span>);</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  NumericVector <span class="fu">y</span>(n <span class="sc">+</span> <span class="dv">1</span>);</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  double h <span class="ot">=</span> (b <span class="sc">-</span> a) <span class="sc">/</span> n;</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  x[<span class="dv">0</span>] <span class="ot">=</span> a;</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  y[<span class="dv">0</span>] <span class="ot">=</span> y0;</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  </span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>  <span class="cf">for</span> (int <span class="at">k =</span> <span class="dv">0</span>; k <span class="sc">&lt;</span> n; <span class="sc">++</span>k) {</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    double K1 <span class="ot">=</span> as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">fun</span>(x[k], y[k]));</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    double K2 <span class="ot">=</span> as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">fun</span>(x[k] <span class="sc">+</span> h <span class="sc">/</span> <span class="dv">2</span>, y[k] <span class="sc">+</span> h <span class="sc">/</span> <span class="dv">2</span> <span class="sc">*</span> K1));</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    double K3 <span class="ot">=</span> as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">fun</span>(x[k] <span class="sc">+</span> h <span class="sc">/</span> <span class="dv">2</span>, y[k] <span class="sc">+</span> h <span class="sc">/</span> <span class="dv">2</span> <span class="sc">*</span> K2));</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    double K4 <span class="ot">=</span> as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">fun</span>(x[k] <span class="sc">+</span> h, y[k] <span class="sc">+</span> h <span class="sc">*</span> K3));</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    </span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    y[k <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">=</span> y[k] <span class="sc">+</span> h <span class="sc">/</span> <span class="dv">6</span> <span class="sc">*</span> (K1 <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> K2 <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> K3 <span class="sc">+</span> K4);</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>    x[k <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">=</span> x[k] <span class="sc">+</span> h;</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  }</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>  return DataFrame<span class="sc">::</span><span class="fu">create</span>(<span class="fu">Named</span>(<span class="st">&quot;x&quot;</span>) <span class="ot">=</span> x, <span class="fu">Named</span>(<span class="st">&quot;y&quot;</span>) <span class="ot">=</span> y);</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>}</span></code></pre></div>
+<p>Using the functions in the package solves the ODE problem above.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y){x<span class="sc">-</span>y<span class="sc">+</span><span class="dv">1</span>}</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>a<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>b<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">100</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>y0<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">RK4ODE</span>(fun, a, b, n, y0)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="fu">plot</span>(result<span class="sc">$</span>x,result<span class="sc">$</span>y,<span class="at">type=</span><span class="st">&#39;l&#39;</span>,<span class="at">xlab=</span><span class="st">&#39;x&#39;</span>,<span class="at">ylab=</span><span class="st">&#39;y&#39;</span>,<span class="at">col=</span><span class="st">&#39;skyblue&#39;</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">curve</span>(x<span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>x),<span class="at">add=</span>T,<span class="at">col=</span><span class="st">&#39;red&#39;</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkAAAAGACAMAAAByRC0tAAAAaVBMVEUAAAAAADoAAGYAOpAAZrY6AAA6ADo6AGY6OpA6kNtmAABmADpmAGZmOpBmZmZmtttmtv+QOgCQOmaQZgCQ2/+2ZgC2tv+2/7a2///bkDrb2//b/9vb////AAD/tmb/25D//7b//9v////WxgYFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAK/ElEQVR4nO3d7XbiRhZGYbrdnUyTmUmYCZMoY8tG93+RoQBjCxBI9Z4j1cd+fmTFvXoVuNmrVAhRWnWAYLX0E0DeCAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEiMA1qhEEsFZDsclkJAkBAQJAQECQFBQkCQEBAkBIQpXi7/gIAw3stVPwSE8a7zISCMd6sfAsJINw5fAQFhlNv5EBDGGeqHgDDGYD8EhBGG+yEgPHanHwLCQ/f6ISA8MPD2/R0B4Z4H+RAQ7nqUDwHhjofTT0dAGDYiHwLCoFH9EBBuG3P4CggIt4zMh4Bw0+h+CAg3jO+HgHBtQj8EhCtT+iEgXJrUDwGhb+zb93eeAbWr1Zff7YaDv6n5uAW0Xa1+vP7juXtb/2YxHOYxOR+vgLZPz932MPs0+/+Th8Mspk8/nVNAh3nn9acQUPv1T3k4zCImH7eAfuz/u/urYwbKR1w/Toew5n3eOaakDgd3UYevwGkR3RzffrWrgTU0AaUlNh/OAyGI74eAEH/4CrwDangXljoln9lnoOk75MOZ1g+HsMpJh6+AgGom50NAVdPzIaCKGUw/ndtHGR+LZd6FJcokH68ZaLcZ6CZuONgz6sfrELbbfLMcDsZsDl+B1xpo+FOwqOFgyiwfFtFVMuyHgOpjd/gKCKg2pvkQUHWM+yGgutgevgICqol5PgRUFYd+CKge9oevgIAq4ZMPAdXCKR8CqoPX9NMRUBX88iGgGnj2Q0DFczx8BQRUON98CKh03v3EBNSerna+f8WY1eNC4Hz4CqYG9LZenS5W3W2GLpg3fVzE889nckBv//zcTP8nn8dFtDn6YQ1UrBkOX8H0gN7+N+vjIspM+UQFtD5ue7j7T/wKiIB8zZZP7Luw/RuwRllCE5CnGfOJWwPt33/tDeyeaf24mGrOfCIX0aEg6SwQAbmZdfrp4gJqVqtfN6uBDaCtHxeTzJxP3CL6cPRqWQMlaPZ+YgL613Hq4V1YcuY+fAVxJxJ3G20JTUAeFsiHgAqySD8EVIolDl8BARVhqXwIqAyL5cOn8SVYbvrp3K4Hat6vWOReGe6WzMfrisRwu7C3dfiLBORs0emnc7om+rhE2m2engnI19L5uG00foxr+/RMQJ4Wz8cpoPObtO03AvKz/PTTxQV0uJPB3Q/j37PZ/00C8pJCPnFroMMNdU+31R3QnFZIg/c8ICBVGv1EBLTbnBc4czwubkri8BVEXM7xy3HqabkeaDmp5KPMQM2oGYhFtINkpp8u8jxQKKiJuiqam+7qUson8pLWR3eTs3xc9KWVDx+mZia1fPhqc16Sy4evNmclwX58vtrMTXc9pHf4Cny+2sxNd+0lmY/bV5u56a6xNKefzu+rzdx011Ky+fDV5iykmw9fbc5AwtNPx4nE5KWdT/QFZU/PWzaYmkHq+cReUNY8Pb+tpYIIaIT084m7nOPH4VKOoQs1jB+3YhnkE/cu7LdDQFxQ5iuH6adTZiAuaXWVRz7CGijugrLpj1unTKafTvhaz90vZRg+bo3yyYfzQAnKKR8CSk5e+RBQYnLLh4CSkl8+BJSSDPMhoHTkOP10kQFpJ6GnPW4lMs2HgBKRaz4ElIRsp58uJqDm+HUdzkSbyTgfZqDl5Tz9dAS0tMzzIaBlZZ8P54GWVEA+BLSYlyLyIaCFFFJPR0DLKCYfAlpCOdNPxw5lCygpH3Yom11R00/ntEOZ5eOWpbR8vHYoM3zckpSXj9sOZXaPW44S8/HboczscQtRynnDK+xQNodS6+mcdihjm9+egvPxOpHINr8fis7H7Uw02/yeFJ6P30cZbPMbFJ8Pn4V5qiAfAvJTRT4E5KTY0z5XvAOq8p6p1dTTzT4D1XDP1Jry4RBmrq58CMhYbfkQkKn68iEgQzXm4xRQjR+m1pkPH6YaqTUfPkw1UW8+fJiqq+ek800sojV119MRkKb6fAhIQT4dAUWrfOlzRkAxqOeMgKajnk8IaCImnz4CmoR6LhHQBORzjYBGI59bCGgclj4DCGgE6hlGQA9Rzz0EdNcLk88DBDSMeEYgoCHUMwoB3cTkMxYBXaOeCQjoEvVMQkA9TD5TEdAZb9ljENAJ8cQhoIC5JxoBceSS1B0Q8cjqDYh4TNQaEPEYqTIg5h471QXEkctWVQERj71aAnohHh81BEQ7jkoPiHicuW1xd3eLzXkCIp4Z+ATUvN8UvB26O7h3QMQzE5eAdptzNs3AzZ0dA2K9PCenfaLPO2y28+4TTTtzK2QGejmxHRWPea2BTlPQDGsgwlmU07uw95sdDMw/FgEx6SQhu/NAL4STlGwCops0eQcUe8/Ul0txDw9vM89Aw/dMpZc8ZXMIQ5oICBICgoSAIHH6LKy+e6bWymcGqu6eqfVyu6Cspnum1sxrDfTwnqkohFNAk7mM7zFoNk80sd+egBzHzGdQAkpyzHwGJaAkx8xnUAJKcsx8BiWgJMfMZ1ACSnLMfAYloCTHzGdQAkpyzHwGTTcgFI6AICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgsQpoHa1+vL7zR+MBj1seT6wUWPsmMF2cPe+2EFfv69WD75NN33QZv/b3/+C1UivP5+/Khr3MvkE1O6fSfv+bHo/GA262+z/p9FfmMvn1g5v/xg5aLsf8G2tF9QbtAk/WBT0tj5/1zjyZXIJ6Lgf8Pbb9Q9Wg75+D/96Q/ukxY3ZHb79rwd047eXn+jloN86i3/SMOm8P7PYl8kloN7La/Ra3xpHntcux2ye/qsH1P/tf7I4eF8MahVQu/px3jE+9mXyCejwr9Z+/icc2to+ctCjrTroxZj7Hw3WQL1B269/rC0Wa/1nanYI6/3uXczL5BLQcWY4zQ+9H6wGPf6J/ML0xwyzuEFAvUGbcIx4uCfFxEHt3pd8FBP7MmUcUGuzhv4YM9y/wTygLzbzb/+Zhqn39bvBm9BEA5rlEKbPP7eeqPUh7LioOC4wzAa1WlZ2XaKHsDkW0Y3FWaDemM1pYxP5tf486PEV0ZfS/UGNJvXuc0ApLaL938Z/3PfFcMzAYAbqDXq8RZY+/944iaEP+nmQpN7G+59ItFkA3HhuFmei++f89gN+uk+WzaAOa6CkTiQeDgfhuRzffjRGbxk+DXo63OjD9p5oZ/RRRm/Q1uYzl/6gW6NBjwEpLxMfpkJCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBDQNGELr7e1zeZERSCgacJeUY3FHkKlIKCJ2q9//GKzd3gZCGiqrcmtU4pBQFPZ7BBfDAKaaLf5t8XuqMUgoImap/8b7LlaDgKaJuz7bLJBcykIaJrtYdtnltFnBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkfwM3+5TrPWqoHwAAAABJRU5ErkJggg==" /><!-- --></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(result))</span></code></pre></div>
+<pre><code>##      x        y
+## 1 0.00 1.000000
+## 2 0.01 1.000050
+## 3 0.02 1.000199
+## 4 0.03 1.000446
+## 5 0.04 1.000789
+## 6 0.05 1.001229</code></pre>
+<p>Romberg function solves the problem of numerical integration. For
+example, we need to compute:</p>
+<p><span class="math display">\[
+\int_{0}^{1} e^xcos(x)+x^2+x^3sin(x)
+\]</span></p>
+<p>The source R code for Romberg model is as follows:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>Romberg <span class="ot">&lt;-</span> <span class="cf">function</span>(f, a, b, TOL) {</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="co"># 初始化参数</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  h <span class="ot">&lt;-</span> b <span class="sc">-</span> a</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  delt <span class="ot">&lt;-</span> <span class="dv">1</span>  <span class="co"># 误差初值</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># 迭代次数</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>  R <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="dv">10</span>, <span class="at">ncol =</span> <span class="dv">10</span>)  <span class="co"># 创建一个4x4的矩阵</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>  R[<span class="dv">1</span>, <span class="dv">1</span>] <span class="ot">&lt;-</span> h <span class="sc">/</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="fu">f</span>(a) <span class="sc">+</span> <span class="fu">f</span>(b))</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>  </span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>  <span class="cf">while</span> (delt <span class="sc">&gt;</span> TOL <span class="sc">&amp;&amp;</span> k<span class="sc">&lt;</span><span class="dv">10</span>) {</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>    <span class="co"># 如果两次计算的误差大于给定误差则进入循环</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    k <span class="ot">&lt;-</span> k <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>    h <span class="ot">&lt;-</span> h <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>    s <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>      x <span class="ot">&lt;-</span> a <span class="sc">+</span> h <span class="sc">*</span> (<span class="dv">2</span> <span class="sc">*</span> j <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>      s <span class="ot">&lt;-</span> s <span class="sc">+</span> <span class="fu">f</span>(x)</span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    }</span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>    R[k <span class="sc">+</span> <span class="dv">1</span>, <span class="dv">1</span>] <span class="ot">&lt;-</span> R[k, <span class="dv">1</span>] <span class="sc">/</span> <span class="dv">2</span> <span class="sc">+</span> h <span class="sc">*</span> s</span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>    n <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> n</span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k) {</span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>      R[k <span class="sc">+</span> <span class="dv">1</span>, i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> ((<span class="dv">4</span><span class="sc">^</span>i) <span class="sc">*</span> R[k <span class="sc">+</span> <span class="dv">1</span>, i] <span class="sc">-</span> R[k, i]) <span class="sc">/</span> (<span class="dv">4</span><span class="sc">^</span>i <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a>    }</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>    delt <span class="ot">&lt;-</span> <span class="fu">abs</span>(R[k <span class="sc">+</span> <span class="dv">1</span>, k] <span class="sc">-</span> R[k <span class="sc">+</span> <span class="dv">1</span>, k <span class="sc">+</span> <span class="dv">1</span>])  <span class="co"># 计算前后两次的值</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>  }</span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>  s <span class="ot">&lt;-</span> R[k <span class="sc">+</span> <span class="dv">1</span>, k <span class="sc">+</span> <span class="dv">1</span>]</span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">s =</span> s, <span class="at">R =</span> R, <span class="at">k =</span> k))</span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>}</span></code></pre></div>
+<p>The above R code involves two loops, which could be very slow even
+for R-3.01 or any higher version. The corresponding C++ code is as
+follows:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>List <span class="fu">RombergCpp</span>(Function f, double a, double b, double TOL) {</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  int n <span class="ot">=</span> <span class="dv">1</span>;                 <span class="sc">/</span><span class="er">/</span> 初始区间数</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  double h <span class="ot">=</span> b <span class="sc">-</span> a;          <span class="sc">/</span><span class="er">/</span> 初始步长</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  double delt <span class="ot">=</span> <span class="fl">1.0</span>;         <span class="sc">/</span><span class="er">/</span> 误差初值</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  int k <span class="ot">=</span> <span class="dv">0</span>;                 <span class="sc">/</span><span class="er">/</span> 迭代次数</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  int max_iter <span class="ot">=</span> <span class="dv">10</span>;         <span class="sc">/</span><span class="er">/</span> 最大迭代次数</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  NumericMatrix <span class="fu">R</span>(max_iter, max_iter); <span class="sc">/</span><span class="er">/</span> 初始化R矩阵，大小为max_iter x max_iter</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>  </span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>  <span class="sc">/</span><span class="er">/</span> 初始化 R[<span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>  <span class="fu">R</span>(<span class="dv">0</span>, <span class="dv">0</span>) <span class="ot">=</span> h <span class="sc">/</span> <span class="dv">2</span> <span class="sc">*</span> (as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">f</span>(a)) <span class="sc">+</span> as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">f</span>(b)));</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>  </span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>  <span class="cf">while</span> (delt <span class="sc">&gt;</span> TOL <span class="sc">&amp;&amp;</span> k <span class="sc">&lt;</span> max_iter <span class="sc">-</span> <span class="dv">1</span>) {</span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>    k<span class="sc">++</span>;</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>    h <span class="sc">/</span><span class="er">=</span> <span class="dv">2</span>;</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a>    double sum <span class="ot">=</span> <span class="fl">0.0</span>;</span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a>    <span class="sc">/</span><span class="er">/</span> 计算新的点</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a>    <span class="cf">for</span> (int <span class="at">j =</span> <span class="dv">1</span>; j <span class="sc">&lt;=</span> n; j<span class="sc">++</span>) {</span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a>      double x <span class="ot">=</span> a <span class="sc">+</span> h <span class="sc">*</span> (<span class="dv">2</span> <span class="sc">*</span> j <span class="sc">-</span> <span class="dv">1</span>);</span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a>      sum <span class="sc">+</span><span class="er">=</span> as<span class="sc">&lt;</span>double<span class="sc">&gt;</span>(<span class="fu">f</span>(x));</span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a>    }</span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a>    <span class="sc">/</span><span class="er">/</span> 更新 R[k, <span class="dv">0</span>]</span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a>    <span class="fu">R</span>(k, <span class="dv">0</span>) <span class="ot">=</span> <span class="fu">R</span>(k <span class="sc">-</span> <span class="dv">1</span>, <span class="dv">0</span>) <span class="sc">/</span> <span class="dv">2</span> <span class="sc">+</span> h <span class="sc">*</span> sum;</span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a>    n <span class="sc">*</span><span class="er">=</span> <span class="dv">2</span>;</span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a>    <span class="sc">/</span><span class="er">/</span> 计算更高阶结果</span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a>    <span class="cf">for</span> (int <span class="at">i =</span> <span class="dv">1</span>; i <span class="sc">&lt;=</span> k; i<span class="sc">++</span>) {</span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a>      <span class="fu">R</span>(k, i) <span class="ot">=</span> (<span class="fu">pow</span>(<span class="dv">4</span>, i) <span class="sc">*</span> <span class="fu">R</span>(k, i <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> <span class="fu">R</span>(k <span class="sc">-</span> <span class="dv">1</span>, i <span class="sc">-</span> <span class="dv">1</span>)) <span class="sc">/</span> (<span class="fu">pow</span>(<span class="dv">4</span>, i) <span class="sc">-</span> <span class="dv">1</span>);</span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a>    }</span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a>    <span class="sc">/</span><span class="er">/</span> 更新误差</span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a>    delt <span class="ot">=</span> <span class="fu">fabs</span>(<span class="fu">R</span>(k, k <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> <span class="fu">R</span>(k, k));</span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a>  }</span>
+<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a>  <span class="sc">/</span><span class="er">/</span> 最终结果</span>
+<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a>  double s <span class="ot">=</span> <span class="fu">R</span>(k, k);</span>
+<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a>  return List<span class="sc">::</span><span class="fu">create</span>(</span>
+<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a>    <span class="fu">Named</span>(<span class="st">&quot;result&quot;</span>) <span class="ot">=</span> s,</span>
+<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a>    <span class="fu">Named</span>(<span class="st">&quot;iterations&quot;</span>) <span class="ot">=</span> k,</span>
+<span id="cb8-36"><a href="#cb8-36" tabindex="-1"></a>    <span class="fu">Named</span>(<span class="st">&quot;R_matrix&quot;</span>) <span class="ot">=</span> R</span>
+<span id="cb8-37"><a href="#cb8-37" tabindex="-1"></a>  );</span>
+<span id="cb8-38"><a href="#cb8-38" tabindex="-1"></a>}</span></code></pre></div>
+<p>Using the functions in the package solves the compute problem
+above.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">exp</span>(x)<span class="sc">*</span><span class="fu">cos</span>(x)<span class="sc">+</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>x<span class="sc">^</span><span class="dv">3</span><span class="sc">*</span><span class="fu">sin</span>(x)  <span class="co"># 积分函数s</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># 积分下限</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">1</span>  <span class="co"># 积分上限</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>TOL <span class="ot">&lt;-</span> <span class="fl">1e-16</span>  <span class="co"># 误差容限</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">Romberg</span>(f, a, b, TOL)</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;积分结果为&quot;</span>, result<span class="sc">$</span>s)</span></code></pre></div>
+<pre><code>## 积分结果为 1.888457</code></pre>
+</div>
+<div id="function-comparison" class="section level3">
+<h3>Function comparison</h3>
+<p>This section compares the performance of the original functions of
+the two methods in R and the functions implemented in this package under
+R and Cpp. It is analyzed from two aspects: calculation accuracy and
+calculation time.</p>
+<div id="runge-kutta-function" class="section level4">
+<h4>Runge-Kutta function</h4>
+<p>We compare the result and the run times of the following four
+methods:</p>
+<ol style="list-style-type: decimal">
+<li>The new function RK4ODE.</li>
+<li>The new Cpp function RK4ODECpp.</li>
+<li>The R function of the initial value problem of an ordinary
+differential equation.</li>
+<li>The R function of the initial value problem of an ordinary
+differential equation using RK4.</li>
+</ol>
+<p>After comparison, it can be found that the return results of the four
+methods are the same at 10e4 precision. And then, We compare the run
+times:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>fun1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y,parms){</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">list</span>(x<span class="sc">-</span>y<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>ts<span class="ot">&lt;-</span><span class="fu">microbenchmark</span>(<span class="at">RK4ODE =</span> <span class="fu">RK4ODE</span>(fun, a, b, n, y0), </span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>                   <span class="at">RK4ODECpp =</span> <span class="fu">RK4ODECpp</span>(fun, a, b, n, y0),</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>                   <span class="at">odeR =</span> <span class="fu">ode</span>(<span class="at">y =</span>y0, <span class="at">times =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.01</span>), <span class="at">func =</span> fun1, <span class="at">parms =</span> <span class="cn">NULL</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>                   <span class="at">odeRRK4 =</span> <span class="fu">rk4</span>(<span class="at">y =</span>y0, <span class="at">times =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.01</span>), <span class="at">func =</span> fun1, <span class="at">parms =</span> <span class="cn">NULL</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>                   )</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="fu">summary</span>(ts)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
+<pre><code>##        expr      lq  median      uq
+## 1    RK4ODE  816.25  992.00 1246.45
+## 2 RK4ODECpp  900.25 1009.30 1230.55
+## 3      odeR  875.85 1067.65 1437.10
+## 4   odeRRK4 1436.95 1727.45 2293.95</code></pre>
+<p>In comparison, it can be seen that the new method takes the shortest
+run time.</p>
+</div>
+<div id="romberg-function" class="section level4">
+<h4>Romberg function</h4>
+<p>This method has not yet formed an R function package. We compare the
+result and the run times of the following four methods:</p>
+<ol style="list-style-type: decimal">
+<li>The new function Romberg.</li>
+<li>The new Cpp function RombergCpp.</li>
+<li>The R function of numerical integration, which use Gaussian-Legendre
+model.</li>
+<li>The R function of numerical integration, which use Trapezoidal
+Rule.</li>
+</ol>
+<p>First, we compare the result:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">exp</span>(x)<span class="sc">*</span><span class="fu">cos</span>(x)<span class="sc">+</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>x<span class="sc">^</span><span class="dv">3</span><span class="sc">*</span><span class="fu">sin</span>(x)  <span class="co"># 积分函数s</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">0</span>  <span class="co"># 积分下限</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">1</span>  <span class="co"># 积分上限</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>TOL <span class="ot">&lt;-</span> <span class="fl">1e-16</span>  <span class="co"># 误差容限</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="fu">Romberg</span>(f, a, b, TOL)<span class="sc">$</span>s,<span class="fu">RombergCpp</span>(f, a, b, TOL)<span class="sc">$</span>result,<span class="fu">integrate</span>(f,<span class="at">lower =</span> a, <span class="at">upper =</span> b)<span class="sc">$</span>value,<span class="fu">trapz</span>(<span class="fu">seq</span>(a, b, <span class="at">length.out =</span> <span class="dv">1000</span>), <span class="fu">f</span>(<span class="fu">seq</span>(a, b, <span class="at">length.out =</span> <span class="dv">1000</span>)))))</span></code></pre></div>
+<pre><code>## [1] 1.888457 1.888457 1.888457 1.888457</code></pre>
+<p>We can find that the result is the same at 10e15 precision.</p>
+<p>And then, We compare the run times:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>ts<span class="ot">&lt;-</span><span class="fu">microbenchmark</span>(<span class="at">Romberg =</span> <span class="fu">Romberg</span>(f, a, b, TOL), </span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>                   <span class="at">RombergCpp =</span> <span class="fu">RombergCpp</span>(f, a, b, TOL),</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>                   <span class="at">resultR =</span> <span class="fu">integrate</span>(f,<span class="at">lower =</span> a, <span class="at">upper =</span> b),</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>                   <span class="at">trapz =</span> <span class="fu">trapz</span>(<span class="fu">seq</span>(a, b, <span class="at">length.out =</span> <span class="dv">1000</span>), <span class="fu">f</span>(<span class="fu">seq</span>(a, b, <span class="at">length.out =</span> <span class="dv">1000</span>)))</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>                   )</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="fu">summary</span>(ts)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
+<pre><code>##         expr     lq median     uq
+## 1    Romberg  87.15 102.05 150.35
+## 2 RombergCpp 100.00 125.30 173.85
+## 3    resultR  49.10  74.10  92.55
+## 4      trapz 480.30 565.65 734.65</code></pre>
+<p>The new method is not the fastest, but it is faster than the
+Trapezoidal Rule. Method Gaussian-Legendres is faster because it has
+less complexity in the way it is calculated.</p>
+</div>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
